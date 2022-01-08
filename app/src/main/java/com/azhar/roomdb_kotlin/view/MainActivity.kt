@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         database = ContactDatabase.getDatabase(this)
 
         GlobalScope.launch{
-            database.contactDao().insertContact(Contact(0, "Sins", "012844751564", Date()))
+            database.contactDao().insertContact(Contact(0, "Sins", "012844751564", Date(), 1))
         }
 
         binding.helloWorldTvId.setOnClickListener{

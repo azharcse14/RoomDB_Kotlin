@@ -10,5 +10,6 @@ data class Contact(
     val id:Long,
     val name:String,
     val phone:String,
-    val createDate: Date
+    val createDate: Date,
+    val isActive:Int
 )
