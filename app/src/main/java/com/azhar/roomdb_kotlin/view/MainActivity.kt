@@ -9,6 +9,7 @@ import com.azhar.roomdb_kotlin.model.Contact
 import com.azhar.roomdb_kotlin.model.ContactDatabase
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var database: ContactDatabase
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         database = ContactDatabase.getDatabase(this)
 
         GlobalScope.launch{
-            database.contactDao().insertContact(Contact(0, "Sins", "012844751564"))
+            database.contactDao().insertContact(Contact(0, "Sins", "012844751564", Date()))
         }
 
         binding.helloWorldTvId.setOnClickListener{

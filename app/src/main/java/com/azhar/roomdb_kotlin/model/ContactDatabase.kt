@@ -4,8 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.azhar.roomdb_kotlin.model.util.Convertors
 
 @Database(entities = [Contact::class], version = 1, exportSchema = false)
+@TypeConverters(Convertors::class)
 abstract class ContactDatabase: RoomDatabase() {
 
 
