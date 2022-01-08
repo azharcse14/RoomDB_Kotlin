@@ -1,4 +1,4 @@
-package com.azhar.roomdb_kotlin.Model
+package com.azhar.roomdb_kotlin.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

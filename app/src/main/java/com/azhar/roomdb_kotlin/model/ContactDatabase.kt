@@ -1,4 +1,4 @@
-package com.azhar.roomdb_kotlin.Model
+package com.azhar.roomdb_kotlin.model
 
 import android.content.Context
 import androidx.room.Database

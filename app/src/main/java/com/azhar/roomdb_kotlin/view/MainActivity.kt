@@ -1,18 +1,18 @@
-package com.azhar.roomdb_kotlin.View
+package com.azhar.roomdb_kotlin.view
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.azhar.roomdb_kotlin.Model.Contact
-import com.azhar.roomdb_kotlin.Model.ContactDatabase
 import com.azhar.roomdb_kotlin.databinding.ActivityMainBinding
+import com.azhar.roomdb_kotlin.model.Contact
+import com.azhar.roomdb_kotlin.model.ContactDatabase
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     lateinit var database: ContactDatabase
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

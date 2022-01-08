@@ -1,4 +1,4 @@
-package com.azhar.roomdb_kotlin.Model
+package com.azhar.roomdb_kotlin.model
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
