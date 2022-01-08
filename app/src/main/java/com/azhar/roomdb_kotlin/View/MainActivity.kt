@@ -1,19 +1,24 @@
 package com.azhar.roomdb_kotlin.View
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.room.Room
 import com.azhar.roomdb_kotlin.Model.Contact
 import com.azhar.roomdb_kotlin.Model.ContactDatabase
-import com.azhar.roomdb_kotlin.R
+import com.azhar.roomdb_kotlin.databinding.ActivityMainBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     lateinit var database: ContactDatabase
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         database = Room.databaseBuilder(applicationContext,
         ContactDatabase::class.java,
@@ -22,5 +27,12 @@ class MainActivity : AppCompatActivity() {
         GlobalScope.launch{
             database.contactDao().insertContact(Contact(0, "Sins", "012844751564"))
         }
+
+        binding.helloWorldTvId.setOnClickListener{
+            database.contactDao().getContact().observe(this, Observer{
+                Log.d("db_test", it.toString())
+            })
+        }
+
     }
 }
