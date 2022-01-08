@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.room.Room
 import com.azhar.roomdb_kotlin.Model.Contact
 import com.azhar.roomdb_kotlin.Model.ContactDatabase
 import com.azhar.roomdb_kotlin.databinding.ActivityMainBinding
@@ -20,9 +19,11 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        database = Room.databaseBuilder(applicationContext,
-        ContactDatabase::class.java,
-        "contactDB").build()
+//        database = Room.databaseBuilder(applicationContext,
+//        ContactDatabase::class.java,
+//        "contactDB").build()
+
+        database = ContactDatabase.getDatabase(this)
 
         GlobalScope.launch{
             database.contactDao().insertContact(Contact(0, "Sins", "012844751564"))
